@@ -1,20 +1,26 @@
-#include <stdio.h>
+#include<stdio.h>
 
-int globalVar = 100;
-
-void myFunction()
-{
-    int localVar = 10; // Local variable
-
-    printf("Inside function: localVar = %d\n", localVar);
-    printf("Inside function: globalVar = %d\n", globalVar);
-}
+ int factorial(int n);
 
 int main()
 {
-    myFunction();
+    int num, answer;
+    printf("enter a number: ");
+    scanf("%d", &num);
 
-    printf("Outside function: globalVar = %d\n", globalVar); // ✅ Works fine
+    answer = factorial(num);
 
+    printf("factorial is : %d ",answer);
+    
     return 0;
+}
+
+    int factorial(int n)
+{
+    int fact=1;
+
+    for(int i=1; i<=n; i++)
+    fact = fact*i;
+
+    return fact;  
 }
